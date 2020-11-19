@@ -368,6 +368,7 @@ for i in sorted_dict.items():
     j=j+1
     
 s=s/3
+print(' Required Accuracy: ')
 print(s)
 
 
@@ -392,18 +393,4 @@ f10=f9.join(TBATS_forecast, lsuffix="_left", rsuffix="_right")
 f10.to_excel("output1.xlsx",
              sheet_name='Sheet_name_1')
 
-f9=f9.join(k, lsuffix="_left", rsuffix="_right")
-f9.set_index('Sizey',inplace=True)
-
-ax = plt.gca()
-f9.plot(kind='line',x='Sizey',y='AR_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='MA_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='ARMA_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='ARIMA_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='SARIMA_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='SETS_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='ETS_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='HOLT_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='VAR_forecast',ax=ax)
-f9.plot(kind='line',x='Sizey',y='VARMA_forecast',ax=ax)
 
