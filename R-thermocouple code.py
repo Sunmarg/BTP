@@ -353,7 +353,8 @@ for i in sorted_dict.items():
     j=j+1
     
 s=s/3
-print(s)
+print('Required Accuracy: ')
+print(s)# 
     
 k=k.to_frame()
 k=k.reset_index()
@@ -371,10 +372,7 @@ f8=f7.join(VAR_forecast, lsuffix="_left", rsuffix="_right")
 f9=f8.join(VARMA_forecast, lsuffix="_left", rsuffix="_right")
 f10=f9.join(TBATS_forecast, lsuffix="_left", rsuffix="_right")
 
-f10.to_excel("output2.xlsx",
+f10.to_excel("output.xlsx",
              sheet_name='Sheet_name_1')
 
-frames = [k,AR_forecast,MA_forecast,ARMA_forecast,ARIMA_forecast,SARIMA_forecast,VAR_forecast,VARMA_forecast,TBATS_forecast,SETS_forecast,ETS_forecast,HOLT_forecast]
-
-result_plot = pd.concat(frames)
 
